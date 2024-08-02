@@ -14,39 +14,37 @@ define("ace/mode/lua_highlight_rules",["require","exports","module","ace/lib/oop
         var builtinConstants = ("true|false|nil|_G|_VERSION");
     
         var functions = (
-            "string|xpcall|package|tostring|print|os|unpack|require|"+
-            "getfenv|setmetatable|next|assert|tonumber|io|rawequal|"+
-            "collectgarbage|getmetatable|module|rawset|math|debug|"+
-            "pcall|table|newproxy|type|coroutine|_G|select|gcinfo|"+
-            "pairs|rawget|loadstring|ipairs|_VERSION|dofile|setfenv|"+
-            "load|error|loadfile|"+
-    
-            "sub|upper|len|gfind|rep|find|match|char|dump|gmatch|"+
-            "reverse|byte|format|gsub|lower|preload|loadlib|loaded|"+
-            "loaders|cpath|config|path|seeall|exit|setlocale|date|"+
-            "getenv|difftime|remove|time|clock|tmpname|rename|execute|"+
-            "lines|write|close|flush|open|output|type|read|stderr|"+
-            "stdin|input|stdout|popen|tmpfile|log|max|acos|huge|"+
-            "ldexp|pi|cos|tanh|pow|deg|tan|cosh|sinh|random|randomseed|"+
-            "frexp|ceil|floor|rad|abs|sqrt|modf|asin|min|mod|fmod|log10|"+
-            "atan2|exp|sin|atan|getupvalue|debug|sethook|getmetatable|"+
-            "gethook|setmetatable|setlocal|traceback|setfenv|getinfo|"+
-            "setupvalue|getlocal|getregistry|getfenv|setn|insert|getn|"+
-            "foreachi|maxn|foreach|concat|sort|remove|resume|yield|"+
-            "status|wrap|create|running|"+
-            "__add|__sub|__mod|__unm|__concat|__lt|__index|__call|__gc|__metatable|"+
-            "__mul|__div|__pow|__len|__eq|__le|__newindex|__tostring|__mode|__tonumber"+
-
-            "syn_websocket_close|firesignal|makefolder|syn_io_append|is_protosmasher_caller|clonefunction|setrawmetatable|syn_mouse2press|debug|syn_io_delfolder|getrawmetatable|getinstancefromstate|syn_io_makefolder|gethiddenprop|setfflag|gethiddenprops|getcallingscript|sethiddenprop|getrenv|syn_crypt_b64_encode|get_instances|newcclosure|gethiddenproperties|getspecialinfo|isluau|shared|decompile|loadstring|getprotos|syn_io_isfolder|hookfunction|isfile|getproto|print|isrbxactive|rconsoleinfo|make_readonly|getstack|rconsolename|unlockmodulescript|getupvalue|syn_getgc|syn_mouse2release|setproto|mouse1click|syn_io_read|setupvalue|syn_io_delfile|gethiddenproperty|identifyexecutor|getscripts|rconsoleerr|dumpstring|keypress|syn_mousescroll|syn_getinstances|syn_mouse1click|get_scripts|rconsoleclear|getlocals|is_redirection_enabled|syn_context_set|syn_keyrelease|syn_io_listdir|isreadonly|rconsoleprint|mouse2click|getinfo|sethiddenproperty|writefile|warn|loadfile|getproperties|getconstant|getprops|syn_setfflag|require|setscriptable|get_nil_instances|getnilinstances|is_synapse_function|getscriptclosure|bit|getconnections|checkcaller|syn|setclipboard|getupvalues|hookfunc|setsimulationradius|setreadonly|firetouchinterest|syn_getsenv|syn_io_isfile|syn_crypt_encrypt|getstates|mouse2press|syn_mouse1press|setconstant|validfgwindow|saveinstance|getinstances|getconstants|getloadedmodules|getgenv|syn_keypress|_G|messagebox|isnetworkowner|Drawing|delfile|mouse1release|get_loaded_modules|setnamecallmethod|syn_getreg|syn_dumpstring|syn_mousemoverel|syn_mouse1release|syn_getloadedmodules|syn_crypt_random|get_calling_script|XPROTECT|delfolder|syn_getcallingscript|keyrelease|appendfile|syn_islclosure|isfolder|listfiles|readfile|syn_websocket_connect|getcallstack|mousescroll|syn_crypt_hash|mousemoveabs|is_protosmasher_closure|syn_checkcaller|syn_mouse2click|mousemoverel|replaceclosure|mouse2release|getpcdprop|islclosure|rconsolewarn|getstateenv|syn_clipboard_set|syn_crypt_decrypt|readbinarystring|syn_getmenv|syn_crypt_b64_decode|mouse1press|syn_getrenv|syn_newcclosure|getpropvalue|syn_crypt_derive|syn_getgenv|getnamecallmethod|getgc|is_lclosure|getpointerfromstate|syn_decompile|setfpscap|getsenv|syn_mousemoveabs|setpropvalue|rconsoleinputasync|getlocal|make_writeable|fireclickdetector|printconsole|rconsoleinput|getmenv|getreg|syn_io_write|setlocal|messageboxasync|setstack|iswindowactive|syn_websocket_send|syn_context_get|syn_isactive|continue|" +
-            "hookmetamethod|request|syn_websocket_close|firesignal|isuntouched|" +
-            "getscripthash|setuntouched|getsynasset|fireproximityprompt|cloneref|" +
-            "crypt|secrun|is_beta|secure_call|cache_replace|get_thread_identity|" +
-            "request|protect_gui|run_secure_lua|cache_invalidate|queue_on_teleport|" +
-            "is_cached|set_thread_identity|crypto|run_secure_function|websocket|" +
-            "unprotect_gui|write_clipboard|" +
-
-            "syn.crypt.encrypt|syn.crypt.custom.encrypt|syn.crypt.custom.hash|syn.crypt.custom.decrypt|syn.crypt.custom|syn.crypt.random|syn.crypt.decrypt|syn.crypt.hash|syn.crypt.derive|syn.crypt.base64.encode|syn.crypt.base64.decode|syn.crypt.base64|syn.crypt|syn.is_beta|syn.secure_call|syn.cache_replace|syn.get_thread_identity|syn.request|syn.protect_gui|syn.cache_invalidate|syn.queue_on_teleport|syn.is_cached|syn.set_thread_identity|syn.crypto.encrypt|syn.crypto.custom.encrypt|syn.crypto.custom.hash|syn.crypto.custom.decrypt|syn.crypto.custom|syn.crypto.random|syn.crypto.decrypt|syn.crypto.hash|syn.crypto.derive|syn.crypto.base64.encode|syn.crypto.base64.decode|syn.crypto.base64|syn.crypto|syn.create_secure_function|syn.run_secure_function|syn.websocket.connect|syn.websocket|syn.unprotect_gui|syn.write_clipboard|syn.crypt.lz4.compress|syn.crypt.lz4|syn.secrun|syn.run_secure_lua|syn.crypto.lz4.compress|syn.crypto.lz4"
+            "string|xpcall|package|tostring|print|os|unpack|require|\
+            getfenv|setmetatable|next|assert|tonumber|io|rawequal|\
+            collectgarbage|module|rawset|math|debug|pcall|table|\
+            newproxy|type|coroutine|_G|select|gcinfo|pairs|rawget|\
+            loadstring|ipairs|_VERSION|dofile|setfenv|load|error|\
+            loadfile|sub|upper|len|gfind|rep|find|match|char|\
+            dump|gmatch|reverse|byte|format|gsub|lower|preload|\
+            loadlib|loaded|loaders|cpath|config|path|seeall|exit|\
+            setlocale|date|getenv|difftime|remove|time|clock|tmpname|\
+            rename|execute|lines|write|close|flush|open|output|\
+            type|read|stderr|stdin|input|stdout|popen|tmpfile|\
+            log|max|acos|huge|ldexp|pi|cos|tanh|pow|deg|tan|\
+            cosh|sinh|random|randomseed|frexp|ceil|floor|rad|\
+            abs|sqrt|modf|asin|min|mod|fmod|log10|atan2|exp|\
+            sin|atan|getupvalue|debug|sethook|getmetatable|\
+            gethook|setmetatable|setlocal|traceback|setfenv|\
+            getinfo|setupvalue|getlocal|getregistry|getfenv|\
+            setn|insert|getn|foreachi|maxn|foreach|concat|\
+            sort|remove|resume|yield|status|wrap|create|running|\
+            __add|__sub|__mod|__unm|__concat|__lt|__index|\
+            __call|__gc|__metatable|__mul|__div|__pow|__len|\
+            __eq|__le|__newindex|__tostring|__mode|__tonumber|\
+            hookmetamethod|request|firesignal|isuntouched|\
+            getscripthash|setuntouched|getsynasset|fireproximityprompt|\
+            cloneref|crypt|secrun|is_beta|secure_call|cache_replace|\
+            get_thread_identity|protect_gui|run_secure_lua|\
+            cache_invalidate|queue_on_teleport|is_cached|\
+            set_thread_identity|crypto|run_secure_function|\
+            websocket|unprotect_gui|write_clipboard"
         );
+        
     
         var stdLibaries = ("string|package|os|io|math|debug|table|coroutine");
     
